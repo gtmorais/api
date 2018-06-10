@@ -15,10 +15,10 @@ namespace API_Core.Data
             // Look for any restaurants.
             if (context.Restaurants.Any())
             {
-                return;   // DB has been seeded //ja tem dados, nao precisa executar essa criacao inicial
+                return;   // DB has been seeded 
             }
 
-            //create restaurantes - Criar 2 Restaurantes de exemplo
+            //create restaurantes 
             var restaurants = new Restaurant[]
             {
             new Restaurant{Name="Dinho's"},
@@ -33,9 +33,9 @@ namespace API_Core.Data
 
             var menus = new Menu[]
             {
-                //cria um menu pro primeiro restaurante
+                //menu for 1st restaurant
                 new Menu{Name="Main Course", Restaurant=context.Restaurants.FirstOrDefault(), RestaurantId = context.Restaurants.FirstOrDefault().Id},
-                //cria um menu pro ultimo restaurante
+                //menu for the last restaurant
                 new Menu{Name="Main Course", Restaurant=context.Restaurants.LastOrDefault(), RestaurantId = context.Restaurants.LastOrDefault().Id},
             };
             foreach (Menu c in menus)
